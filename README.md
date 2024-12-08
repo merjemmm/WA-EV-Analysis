@@ -121,12 +121,24 @@ Evaluation Metrics:
 
 After predicting on our test data, we can see it performs better than our base model in terms of $R^2$, but worse in terms of RMSE. This is due to the final point of predicted values is very different to the expected one. However, all other values are considerably close. 
 
-<!-- <iframe
-  src="asset_plots/final_model_all_p4b.html"
+This presents the danger of using polynomials to extend past their trained area. We can see it starts increasing rapidly. However, we also do some checks on our data to make sure this isn't indicative of a different issue. 
+For example, is there missing inputs for certain counties in September? 
+So, we try to predict on only 2023 based on previous years. We don't include 2024 at all. 
+Now, we get better predictions. 
+
+
+Evaluation Metrics: 
+* Root Mean Squared Error: 7026.577
+* $R*2$: 0.589
+
+Going back to teh earlier graph of Total Vehicles registered, the number starts to decrease in 2024. This isn't something the model could predict. Therefore, this shows the influence of outside factors. 
+
+<iframe
+  src="asset_plots/last_plot.html"
   width="800"
   height="600"
   frameborder="0"
-></iframe> -->
+></iframe>
 
 <!-- <iframe
   src="asset_plots/all_count_plot_p2a.html"
