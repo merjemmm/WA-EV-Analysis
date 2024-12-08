@@ -1,4 +1,4 @@
-# Electric Vehicles in Washington
+# The Status of Electric Vehicles in Washington
 
 **Name**: Merjem Memic
 **Affiliation**: University of Michigan
