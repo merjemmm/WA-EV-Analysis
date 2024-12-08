@@ -111,7 +111,7 @@ This performance isn't good. The out of sampel $$R^2$$ is very low and through t
 After looking at the data, we can see a curved pattern to the data so, we implement polynomial regression. We create a pipeline to allow us to test different degree polynomials. Through using GridSearchCV, it claims a polynomial of degree 3 works best. 
 
 <iframe
-  src="asset_plots/final_model_test_p4a.html"
+  src="asset_plots/final_model_test_p4b.html"
   width="800"
   height="450"
   frameborder="0"
