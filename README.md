@@ -43,13 +43,6 @@ Thankfully, there were no missing values in the data relating to the columns and
 ></iframe>
 
 <iframe
-  src="asset_plots/all_count_plot_p2a.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
-
-<iframe
   src="asset_plots/zoomin_plot_p2b.html"
   width="800"
   height="600"
@@ -58,6 +51,13 @@ Thankfully, there were no missing values in the data relating to the columns and
 
 <iframe
   src="asset_plots/non_ev_all_v_plot_p2c.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="asset_plots/all_count_plot_p2d.html"
   width="800"
   height="600"
   frameborder="0"
@@ -93,16 +93,16 @@ Thankfully, there were no missing values in the data relating to the columns and
   frameborder="0"
 ></iframe>
 
-<iframe
+<!-- <iframe
   src="asset_plots/final_model_all_p4b.html"
   width="800"
   height="600"
   frameborder="0"
-></iframe>
+></iframe> -->
 
-<iframe
+<!-- <iframe
   src="asset_plots/all_count_plot_p2a.html"
   width="800"
   height="600"
   frameborder="0"
-></iframe>
+></iframe> -->
