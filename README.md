@@ -35,6 +35,9 @@ Thankfully, there were no missing values in the data relating to the columns and
 | 2024-04-30 00:00:00 | Clallam      |                            30 |                        21408 |            21438 |
 
 
+This plot shows the number of registered Electric Vehicles for every county in Washington State. As shown, King County has the most EVs of any county. However, it also has almost double the population that Pierce, the county with the second largest amount of EVS, does (https://www.census.gov/quickfacts/kingcountywashington, https://www.census.gov/quickfacts/piercecountywashington).
+
+
 <iframe
   src="asset_plots/all_count_plot_p2a.html"
   width="800"
@@ -42,12 +45,8 @@ Thankfully, there were no missing values in the data relating to the columns and
   frameborder="0"
 ></iframe>
 
-<iframe
-  src="asset_plots/zoomin_plot_p2b.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
+We can also look at the aggregate populations of vehicles in Washington. 
+Pay attention to the scales because there are close to 6 million non-Electric Vehicles, while only around 170 thousand Electric Vehicles in all of Washington at the beginning of 2024. The state is still mostly using gas based vehicles instead of teh more sustainable possibility. 
 
 <iframe
   src="asset_plots/non_ev_all_v_plot_p2c.html"
@@ -64,17 +63,32 @@ Thankfully, there were no missing values in the data relating to the columns and
 ></iframe>
 
 
+We also can get an idea of what EV makes are most popular in Washington as of October of 2024. 
+Some quick facts:
+ * Tesla has seemingly cornered the market, and is the most popular make of EV in Washington. There are 91,379 Tesla branded cars registered.
+ * The second largest is Chevrolet with 15,419. 
+ * They are followed by Nissan at 14,721.
+ * The `OTHER 22` present in the pie chart is representative of 22 other car brands where each individually had less than 1,000 cars registered. For ease of understanding, they are all shown under this label instead. 
+ * There are two registered Rolls-Royce EVs in Washington.
+ * There is one Vinfast EV registered. This might be surprising, but Vinfast is a popular EV brand abroad (https://vinfast.com, https://en.wikipedia.org/wiki/VinFast). It was also named as among world's 100 most influential companies in 2024 by Time Magazine's (https://time.com/6979933/vinfast/). The more you know.
+
 <iframe
-  src="asset_plots/make_ev_hist_p2e.html"
+  src="asset_plots/pie_chart_p2f.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
 
 
+## Framing a Prediction Problem
 
+We will be trying to predict the total number of Electric Vehicles in Washington for the last year of our data set. This will result in around 13% of our full datatest composing the test, while 87% will become the training set. We will be using the total number of vehicles and associated dates to predict the electric vehicles for a certain date. 
 
 ## Baseline Model
+
+For our basic model, we start off with a simple linear regression on the model. Since the data is a time series and numeric, this is a logical place to start and no further encoding is needed. Time is considered an interval variable, while the total vehicles variable is quantitative. 
+
+Because of the small number of columns we are training on, we don't need to think about 'Best Subset Regression' or using Lasso or Ridge since they are mostly used for the opposite situation. 
 
 <iframe
   src="asset_plots/base_model_test_p3a.html"
@@ -82,6 +96,12 @@ Thankfully, there were no missing values in the data relating to the columns and
   height="600"
   frameborder="0"
 ></iframe>
+
+We use two metrics to evaluate our plots: 
+* Root Mean Squared Error: 31686.247
+* $R*2$: -6.717
+
+This performance isn't good. The out of sampel $R^2$ is very low and through teh visualization, we can see how different the predicted values are compared to the actual values. 
 
 
 ## Final Model
