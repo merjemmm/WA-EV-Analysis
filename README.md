@@ -106,12 +106,20 @@ This performance isn't good. The out of sampel $R^2$ is very low and through teh
 
 ## Final Model
 
+After looking at the data, we can see a curved pattern to the data so, we implement polynomial regression. We create a pipeline to allow us to test different degree polynomials. Through using GridSearchCV, it claims a polynomial of degree 3 works best. 
+
 <iframe
   src="asset_plots/final_model_test_p4a.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+Evaluation Metrics: 
+* Root Mean Squared Error: 33905.045
+* $R*2$: 0.398
+
+After predicting on our test data, we can see it performs better than our base model in terms of $R^2$, but worse in terms of RMSE. This is due to the final point of predicted values is very different to the expected one. However, all other values are considerably close. 
 
 <!-- <iframe
   src="asset_plots/final_model_all_p4b.html"
