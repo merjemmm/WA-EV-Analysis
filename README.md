@@ -43,7 +43,7 @@ This plot shows the number of registered Electric Vehicles for every county in W
 <iframe
   src="asset_plots/all_count_plot_p2a.html"
   width="800"
-  height="400"
+  height="450"
   frameborder="0"
 ></iframe>
 
@@ -53,14 +53,14 @@ Pay attention to the scales because there are close to 6 million non-Electric Ve
 <iframe
   src="asset_plots/non_ev_all_v_plot_p2c.html"
   width="800"
-  height="400"
+  height="450"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="asset_plots/wa_ev_plot_p2d.html"
   width="800"
-  height="400"
+  height="450"
   frameborder="0"
 ></iframe>
 
@@ -77,7 +77,7 @@ Some quick facts:
 <iframe
   src="asset_plots/pie_chart_p2f.html"
   width="800"
-  height="400"
+  height="450"
   frameborder="0"
 ></iframe>
 
@@ -95,15 +95,15 @@ Because of the small number of columns we are training on, we don't need to thin
 <iframe
   src="asset_plots/base_model_test_p3a.html"
   width="800"
-  height="400"
+  height="450"
   frameborder="0"
 ></iframe>
 
 We use two metrics to evaluate our plots: 
 * Root Mean Squared Error: 31686.247
-* R^2^: -6.717
+* $$R^2$$: -6.717
 
-This performance isn't good. The out of sampel R^2^ is very low and through the visualization, we can see how different the predicted values are compared to the actual values. 
+This performance isn't good. The out of sampel $$R^2$$ is very low and through the visualization, we can see how different the predicted values are compared to the actual values. 
 
 
 ## Final Model
@@ -113,15 +113,15 @@ After looking at the data, we can see a curved pattern to the data so, we implem
 <iframe
   src="asset_plots/final_model_test_p4a.html"
   width="800"
-  height="400"
+  height="450"
   frameborder="0"
 ></iframe>
 
 Evaluation Metrics: 
 * Root Mean Squared Error: 33905.045
-* R^2^: 0.398
+* $$R^2$$: 0.398
 
-After predicting on our test data, we can see it performs better than our base model in terms of R^2^, but worse in terms of RMSE. This is due to the final point of predicted values is very different to the expected one. However, all other values are considerably close. 
+After predicting on our test data, we can see it performs better than our base model in terms of $$R^2$$, but worse in terms of RMSE. This is due to the final point of predicted values is very different to the expected one. However, all other values are considerably close. 
 
 This presents the danger of using polynomials to extend past their trained area. We can see it starts increasing rapidly. However, we also do some checks on our data to make sure this isn't indicative of a different issue. 
 For example, is there missing inputs for certain counties in September? 
@@ -131,14 +131,14 @@ Now, we get better predictions.
 
 Evaluation Metrics: 
 * Root Mean Squared Error: 7026.577
-* R^2^: 0.589
+* $$R^2$$: 0.589
 
 Going back to the earlier graph of Total Vehicles registered, the number starts to decrease in 2024. This isn't something the model could predict. Therefore, this shows the influence of outside factors. 
 
 <iframe
   src="asset_plots/last_plot.html"
   width="800"
-  height="400"
+  height="450"
   frameborder="0"
 ></iframe>
 
