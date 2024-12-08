@@ -37,7 +37,7 @@ Thankfully, there were no missing values in the data relating to the columns and
 | 2024-04-30 00:00:00 | Clallam      |                            30 |                        21408 |            21438 |
 
 
-This plot shows the number of registered Electric Vehicles for every county in Washington State. As shown, King County has the most EVs of any county. However, it also has almost double the population that Pierce, the county with the second largest amount of EVS, does ([King County Population](https://www.census.gov/quickfacts/kingcountywashington), [Pierce County Population](https://www.census.gov/quickfacts/piercecountywashington)).
+This plot shows the number of registered Electric Vehicles for every county in Washington State. As shown, King County has the most EVs of any county. However, it also has almost double the population that Snohomish, the county with the second largest amount of EVS, does ([King County Population](https://www.census.gov/quickfacts/kingcountywashington), [Snohomish County Population](https://www.census.gov/quickfacts/fact/table/snohomishcountywashington/PST045216)).
 
 
 <iframe
