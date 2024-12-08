@@ -1,13 +1,15 @@
 # The Status of Electric Vehicles in Washington
 
 **Name**: Merjem Memic
+
 **Affiliation**: University of Michigan
+
 **Email**: merjemm@umich.edu
 
 This is an analysis of public records of Vehicles licensed in Washington.
-The first dataset detailing registered vehicles from Jan 2017 to Sept 2024 can be found at https://catalog.data.gov/dataset/electric-vehicle-population-size-history-by-county.
+The first dataset detailing registered vehicles from Jan 2017 to Sept 2024 can be found at <https://catalog.data.gov/dataset/electric-vehicle-population-size-history-by-county>.
 
-The second dataset detailing all electric vehicles registered as of October 2024 including their make and model can be found at https://catalog.data.gov/dataset/electric-vehicle-population-data. 
+The second dataset detailing all electric vehicles registered as of October 2024 including their make and model can be found at <https://catalog.data.gov/dataset/electric-vehicle-population-data>. 
 
 This project was created as the final project in EECS 398: Practical Data Science at the University of Michigan taught by Prof. Suraj Rampure in Fall 2024. 
 
@@ -35,30 +37,30 @@ Thankfully, there were no missing values in the data relating to the columns and
 | 2024-04-30 00:00:00 | Clallam      |                            30 |                        21408 |            21438 |
 
 
-This plot shows the number of registered Electric Vehicles for every county in Washington State. As shown, King County has the most EVs of any county. However, it also has almost double the population that Pierce, the county with the second largest amount of EVS, does (https://www.census.gov/quickfacts/kingcountywashington, https://www.census.gov/quickfacts/piercecountywashington).
+This plot shows the number of registered Electric Vehicles for every county in Washington State. As shown, King County has the most EVs of any county. However, it also has almost double the population that Pierce, the county with the second largest amount of EVS, does ([King County Population](https://www.census.gov/quickfacts/kingcountywashington), [Pierce County Population](https://www.census.gov/quickfacts/piercecountywashington)).
 
 
 <iframe
   src="asset_plots/all_count_plot_p2a.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
 We can also look at the aggregate populations of vehicles in Washington. 
-Pay attention to the scales because there are close to 6 million non-Electric Vehicles, while only around 170 thousand Electric Vehicles in all of Washington at the beginning of 2024. The state is still mostly using gas based vehicles instead of teh more sustainable possibility. 
+Pay attention to the scales because there are close to 6 million non-Electric Vehicles, while only around 170 thousand Electric Vehicles in all of Washington at the beginning of 2024. The state is still mostly using gas based vehicles instead of the more sustainable possibility. 
 
 <iframe
   src="asset_plots/non_ev_all_v_plot_p2c.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
 <iframe
   src="asset_plots/wa_ev_plot_p2d.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
@@ -70,12 +72,12 @@ Some quick facts:
  * They are followed by Nissan at 14,721.
  * The `OTHER 22` present in the pie chart is representative of 22 other car brands where each individually had less than 1,000 cars registered. For ease of understanding, they are all shown under this label instead. 
  * There are two registered Rolls-Royce EVs in Washington.
- * There is one Vinfast EV registered. This might be surprising, but Vinfast is a popular EV brand abroad (https://vinfast.com, https://en.wikipedia.org/wiki/VinFast). It was also named as among world's 100 most influential companies in 2024 by Time Magazine's (https://time.com/6979933/vinfast/). The more you know.
+ * There is one Vinfast EV registered. This might be surprising, but Vinfast is a popular EV brand abroad ([Their Official Website](<https://vinfast.com>), <https://en.wikipedia.org/wiki/VinFast>). It was also named as among world's 100 most influential companies in 2024 by [Time Magazine](<https://time.com/6979933/vinfast/>). The more you know.
 
 <iframe
   src="asset_plots/pie_chart_p2f.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
@@ -93,15 +95,15 @@ Because of the small number of columns we are training on, we don't need to thin
 <iframe
   src="asset_plots/base_model_test_p3a.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
 We use two metrics to evaluate our plots: 
 * Root Mean Squared Error: 31686.247
-* $R*2$: -6.717
+* R^2^: -6.717
 
-This performance isn't good. The out of sampel $R^2$ is very low and through teh visualization, we can see how different the predicted values are compared to the actual values. 
+This performance isn't good. The out of sampel R^2^ is very low and through the visualization, we can see how different the predicted values are compared to the actual values. 
 
 
 ## Final Model
@@ -111,15 +113,15 @@ After looking at the data, we can see a curved pattern to the data so, we implem
 <iframe
   src="asset_plots/final_model_test_p4a.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
 Evaluation Metrics: 
 * Root Mean Squared Error: 33905.045
-* $R*2$: 0.398
+* R^2^: 0.398
 
-After predicting on our test data, we can see it performs better than our base model in terms of $R^2$, but worse in terms of RMSE. This is due to the final point of predicted values is very different to the expected one. However, all other values are considerably close. 
+After predicting on our test data, we can see it performs better than our base model in terms of R^2^, but worse in terms of RMSE. This is due to the final point of predicted values is very different to the expected one. However, all other values are considerably close. 
 
 This presents the danger of using polynomials to extend past their trained area. We can see it starts increasing rapidly. However, we also do some checks on our data to make sure this isn't indicative of a different issue. 
 For example, is there missing inputs for certain counties in September? 
@@ -129,14 +131,14 @@ Now, we get better predictions.
 
 Evaluation Metrics: 
 * Root Mean Squared Error: 7026.577
-* $R*2$: 0.589
+* R^2^: 0.589
 
-Going back to teh earlier graph of Total Vehicles registered, the number starts to decrease in 2024. This isn't something the model could predict. Therefore, this shows the influence of outside factors. 
+Going back to the earlier graph of Total Vehicles registered, the number starts to decrease in 2024. This isn't something the model could predict. Therefore, this shows the influence of outside factors. 
 
 <iframe
   src="asset_plots/last_plot.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
